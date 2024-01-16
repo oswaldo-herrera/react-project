@@ -1,6 +1,25 @@
 # React + Vite
 
-Hola
+Este repositorio es un desafio para el curso de React de Kodemia
+
+Pasos para instalación
+
+npm create vite@latest y contestamos el quizz
+
+Instalamos Tailwind
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+Ejecutamos el proyecto
+
+npm run dev 
+
+Implementacion de tecnologias
+React, Tailwind, Hooks, Javascript
+
+React Hook Form
+https://react-hook-form.com/get-started
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
