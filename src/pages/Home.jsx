@@ -1,12 +1,36 @@
-import {Link,Outlet} from 'react-router-dom'
+import { useState,useEffect } from 'react';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+
+
 
 export default function Home() {
+    const [token, setToken] = useState(null); 
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedToken  = localStorage.getItem('token');
+        setToken(storedToken);
+    }, []);
+
+
+    const handleLogout = () => {
+        
+        localStorage.removeItem('token'); 
+        setToken(null); 
+        
+        navigate('/');
+    };
+
+
+
+
+
     return (
         <>
             <div className="flex ">
 
                 <div className="flex-none px-10  ml-10">
-                    <img className="w-20 mr-4" src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="" />
+                   <a href="/"> <img className="w-20 mr-4" src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="" /></a>
                 </div>
                 
 
@@ -19,8 +43,10 @@ export default function Home() {
 
                 
                 <div className=" flex flex-auto  ml-20">
-                    <Link to='/login' className='mr-10 mt-5'>Log in </Link>
-                    <a href='/register' className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mt-5 p-2 h-10 border border-blue-500 hover:border-transparent rounded">Create account</a>
+                    {token ? <a href='/publication' className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mt-5 p-2 h-10 border border-blue-500 hover:border-transparent rounded">Create Post</a> : <Link to='/login' className='mr-10 mt-5'>Log in </Link>}
+                   
+                    {token ? <button onClick={handleLogout} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mt-5 ml-5 p-2 h-10 border border-blue-500 hover:border-transparent rounded">Logout</button> : <a href='/register' className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mt-5 p-2 h-10 border border-blue-500 hover:border-transparent rounded">Create account</a>}
+                    
                 </div>
                 
 

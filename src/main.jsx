@@ -5,10 +5,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 //pages
 import Home from './pages/Home'
-import DetallePublicacion from './pages/DetallePublicacion'
+
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import RegisterPage from './pages/RegisterPage'
+import DetailsCards from './pages/DetailsCards'
+import Publications from './pages/Publications'
 
 
 const router = createBrowserRouter([
@@ -21,9 +23,14 @@ const router = createBrowserRouter([
         element: <Dashboard/>,
       },
       {
-        path: 'detalle',
-        element:<DetallePublicacion/>
+        path: "/posts/:id",
+        element: <DetailsCards/>
+      },
+      {
+        path: "/publication",
+        element: <Publications/>
       }
+      
     ]
   },
   {
@@ -33,7 +40,8 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage/>
-  }
+  },
+  
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

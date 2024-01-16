@@ -63,7 +63,7 @@ export default function LoginForm() {
             <form className=" w-96  p-5 rounded flex flex-col justify-center items-center gap-5" onSubmit={handleSubmit}>
 
                 
-                <label className="text-left" >Usuario:</label>
+                <label className="text-left" >Email:</label>
                 <input
                     type="text"
                     className="w-96 border border-black p-2 rounded"
@@ -72,7 +72,7 @@ export default function LoginForm() {
                     required
                 />
                 
-                <label >Email:</label>
+                <label >Password:</label>
                 <input
                     type={ispasswordtrue ? "text" : "password"}
                     className="w-96 border border-black p-2 rounded"

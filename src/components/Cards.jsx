@@ -40,7 +40,7 @@ export default function Cards() {
                             </div>
                         </div>
                         <div className='pl-[68px]'>
-                            <a href="">
+                            <a href={`/posts/${publication._id}`}>
                                 <p id='cardTitle' className='font-bold text-2xl hover:text-indigo-800 pb-3'>
                                     {publication.title}
                                 </p>
