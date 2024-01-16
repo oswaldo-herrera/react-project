@@ -15,6 +15,9 @@ Ejecutamos el proyecto
 
 npm run dev 
 
+Back-End 
+NodeJs
+
 Implementacion de tecnologias
 React, Tailwind, Hooks, Javascript
 
